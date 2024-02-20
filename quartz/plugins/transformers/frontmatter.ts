@@ -59,7 +59,7 @@ export const FrontMatter: QuartzTransformerPlugin<Partial<Options> | undefined> 
               },
             })
 
-            if (data[opts.titleKey] !== undefined && data[opts.titleKey] !== null) {
+            if (data[opts.titleKey] != null && data[opts.titleKey].toString() !== "") {
               data.title = data[opts.titleKey].toString()
             } else {
               data.title = file.stem ?? i18n(cfg.configuration.locale).propertyDefaults.title
